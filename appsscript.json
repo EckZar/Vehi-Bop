@@ -1,0 +1,23 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {
+    "libraries": [{
+      "userSymbol": "OAuth2",
+      "libraryId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
+      "version": "30"
+    }, {
+      "userSymbol": "Moment",
+      "libraryId": "15hgNOjKHUG4UtyZl9clqBbl23sDvWMS8pfDJOyIapZk5RBqwL3i-rlCo",
+      "version": "9"
+    }]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "sheets": {
+    "macros": [{
+      "menuName": "Новый макрос",
+      "functionName": "myFunction",
+      "defaultShortcut": "Ctrl+Alt+Shift+1"
+    }]
+  }
+}

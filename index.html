@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+    {Stylesheet}
+
+    <script>
+      function gather(){
+        
+        var selections = document.getElementsByClassName("drop-display");
+
+        var namesArray = getTextContent(selections[0]);        
+        var vehasNamesArray = getTextContent(selections[1]);
+        var additionalFieldsArray = getTextContent(selections[2]);
+        
+        console.log(namesArray);
+        console.log(vehasNamesArray);
+        console.log(additionalFieldsArray);
+
+        google.script.run.start(namesArray, vehasNamesArray, additionalFieldsArray);
+
+        google.script.host.close();
+
+      };
+      
+      function getTextContent(object){
+        let items = object.getElementsByClassName("item");
+        let array = [];
+        for(i of items)
+        {
+          if(i.className == "item hide" || i.className == "item remove"){continue}
+          array.push(i.textContent.replace(//g,""));
+        }
+        return array;
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    
+    
+    <div class="container">
+      <section>
+        <p>ФИО сотрудника</p>
+        <select multiple="multiple" id="responsibleFace">
+          <option>Item 1</option>
+          <option>item 2</option>
+          <option>item 3</option>
+          <option>item 4</option>
+          {arrayNamesOptions}
+        </select>
+      </section>
+
+      <section>
+        <p>Вехи</p>
+        <select multiple="multiple" id="vehasNames">
+          <option>Item 1</option>
+          <option>item 2</option>
+          <option>item 3</option>
+          <option>item 4</option>
+          {arrayVehaNames}
+        </select>
+      </section>
+
+      <section>
+        <p>Дополнительные поля</p>
+        <select multiple="multiple" id="additionalFields">
+          <option>Item 1</option>
+          <option>item 2</option>
+          <option>item 3</option>
+          <option>item 4</option>
+          {additionalFields}
+        </select>
+      </section>
+    </div>
+
+    <input type="button" value="Сформировать" onclick="gather()" />
+    
+    {JavaScript}
+
+  </body>
+</html>
